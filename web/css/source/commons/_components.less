@@ -1,0 +1,28 @@
+:focus-visible { outline: none; }
+
+& when (@media-common = true) {
+
+  ul {
+    &:extend(.uk-list);
+  }
+
+  .mage-error {
+    &:extend(.uk-text-danger);
+  }
+
+  .counter {
+    &.no-display {
+      &:extend(.uk-hidden);
+    }
+  }
+
+  table {
+    &:extend(.uk-table);
+  }
+
+  .table-wrapper{
+    .table:not(.cart):not(.totals):not(.table-comparison){
+      background-color: transparent;
+    }
+  }
+}

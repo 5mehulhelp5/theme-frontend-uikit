@@ -1,0 +1,291 @@
+@form-field__vertical-indent__desktop: 29px;
+@form-calendar-icon__color: @primary__color;
+
+.hook-form() {
+    margin-bottom: 0;
+    margin-top: 0;
+    background: @global-muted-background;
+    border: 1px solid darken(@global-muted-background, 20%);
+    border-radius: @button__border-radius;
+}
+.hook-form-radio() {
+    margin-bottom: 0;
+    margin-top: 0;
+    background: @global-muted-background;
+    border: 1px solid darken(@global-muted-background, 20%);
+    border-radius: @button__border-radius;
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .abs-margin-for-forms-desktop {
+        margin-left: 0px;
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
+    .abs-margin-for-forms-desktop-s {
+        margin-left: 0px;
+    }
+}
+
+& when (@media-common = true) {
+    .field {
+        .field-tooltip {
+            .field-tooltip-action {
+                &:before {
+                    content: "";
+                    .svg-fill(@question-svg-icon, "#000", @global-secondary-color);
+                    width: 19px;
+                    height: 20px;
+                }
+            }
+        }
+        .password-strength-meter {
+            background-color: darken(@global-muted-background, 20%);
+        }
+        .password-none {
+            .password-strength-meter {
+                &:before {
+                    background-color: darken(@global-muted-background, 20%);
+                }
+            }
+        }
+    }
+    .hook-inverse() {
+        select,
+        textarea,
+        input {
+            &:not([type="radio"]) {
+                &:not([type="checkbox"]) {
+                    background-color: @inverse-form-background;
+                    color: @inverse-form-color;
+                    background-clip: padding-box;
+                    .hook-inverse-form;
+
+                    &:focus {
+                        background-color: @inverse-form-focus-background;
+                        color: @inverse-form-focus-color;
+                        .hook-inverse-form-focus;
+                    }
+                }
+            }
+        }
+
+        //
+        // Placeholder
+        //
+
+        input:not([type="radio"]):not([type="checkbox"])::-ms-input-placeholder { color: @inverse-form-placeholder-color !important; }
+        input:not([type="radio"]):not([type="checkbox"])::placeholder { color: @inverse-form-placeholder-color; }
+
+        textarea::-ms-input-placeholder { color: @inverse-form-placeholder-color !important; }
+        textarea::placeholder { color: @inverse-form-placeholder-color; }
+
+        //
+        // Select
+        //
+
+        select:not([multiple]):not([size]) { .svg-fill(@internal-form-select-image, "#000", @inverse-form-select-icon-color); }
+
+        //
+        // Datalist
+        //
+
+        input:not([type="radio"]):not([type="checkbox"])[list]:hover,
+        input:not([type="radio"]):not([type="checkbox"])[list]:focus { .svg-fill(@internal-form-datalist-image, "#000", @inverse-form-datalist-icon-color); }
+
+        //
+        // Radio and checkbox
+        //
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            background-color: @inverse-form-radio-background;
+            .hook-inverse-form-radio;
+        }
+
+        // Focus
+        input[type="radio"]:focus,
+        input[type="checkbox"]:focus {
+            .hook-inverse-form-radio-focus;
+        }
+
+        // Checked
+        input[type="radio"]:checked,
+        input[type="checkbox"]:checked,
+        input[type="checkbox"]:indeterminate {
+            background-color: @inverse-form-radio-checked-background;
+            background-repeat: no-repeat;
+            .hook-inverse-form-radio-checked;
+        }
+
+        // Focus
+        input[type="radio"]:checked:focus,
+        input[type="checkbox"]:checked:focus,
+        input[type="checkbox"]:indeterminate:focus {
+            background-color: @inverse-form-radio-checked-focus-background;
+            background-repeat: no-repeat;
+            .hook-inverse-form-radio-checked-focus;
+        }
+
+        // Icon
+        input[type="radio"]:checked { .svg-fill(@internal-form-radio-image, "#000", @inverse-form-radio-checked-icon-color); }
+        input[type="checkbox"]:checked { .svg-fill(@internal-form-checkbox-image, "#000", @inverse-form-radio-checked-icon-color); }
+        input[type="checkbox"]:indeterminate { .svg-fill(@internal-form-checkbox-indeterminate-image, "#000", @inverse-form-radio-checked-icon-color); }
+    }
+    input {
+        &:not([type="radio"]) {
+            &:not([type="checkbox"]) {
+                &:extend(.uk-input);
+            }
+        }
+
+        &[type="radio"] {
+            &:extend(.uk-radio);
+
+            &:focus {
+                &:extend(.uk-radio:focus);
+            }
+
+            &:checked {
+                background-repeat: no-repeat;
+                &:extend(.uk-radio:checked);
+
+                &:focus {
+                    &:extend(.uk-radio:checked:focus);
+                }
+            }
+        }
+
+        &[type="checkbox"] {
+            &:extend(.uk-checkbox);
+
+            &:focus {
+                &:extend(.uk-checkbox:focus);
+
+                &:indeterminate {
+                    &:extend(.uk-checkbox:indeterminate:focus);
+                }
+            }
+
+            &:checked {
+                background-repeat: no-repeat;
+                &:extend(.uk-checkbox:checked);
+
+                &:focus {
+                    &:extend(.uk-checkbox:checked:focus);
+                }
+            }
+        }
+
+        &[type="range"] {
+            &:extend(.uk-range);
+        }
+    }
+    textarea {
+        &:extend(.uk-textarea);
+    }
+    select {
+        &:extend(.uk-select);
+    }
+    .field-error {
+        &:extend(.uk-text-danger);
+    }
+    fieldset.fieldset {
+        > legend.legend {
+            font-weight: 800;
+            &:extend(.uk-margin-remove-left);
+        }
+        > div.field:not(.choice),
+        > div.field.choice {
+            &:before {
+                &:extend(.uk-padding-remove);
+                width: 0px;
+            }
+
+            > .label,
+            > .control {
+                float: none;
+            }
+
+            > .control {
+                &:extend(.uk-width-1-1);
+            }
+        }
+    }
+    #maincontent {
+        .abs-margin-for-forms-desktop,
+        .fieldset .legend,
+        .column:not(.sidebar-main) form .actions-toolbar,
+        .column:not(.sidebar-additional) form .actions-toolbar,
+        .login-container .fieldset:after {
+            &:extend(.uk-margin-remove-left);
+        }
+    }
+    fieldset {
+        border: solid 0px;
+        &:extend(.uk-padding-remove);
+        .field-tooltip {
+            .field-tooltip-content {
+                border-radius: @button__border-radius;
+                border: 0px;
+                background: @global-secondary-color;
+                .lib-css(color, @global-inverse-color);
+                &:before {
+                    border: 0px;
+                }
+                &:after {
+                    border-right-color: @global-secondary-color;
+                }
+            }
+        }
+    }
+    form {
+        .field-tooltip {
+            .field-tooltip-content {
+                border-radius: @button__border-radius;
+                background: @global-secondary-color;
+                .lib-css(color, @global-inverse-color);
+                &:before {
+                    border: solid 0px;
+                }
+                &:after {
+                    border-right-color: transparent;
+                    border-bottom-color: @global-secondary-color;
+                }
+            }
+        }
+    }
+    body:not(.account) {
+        .column.main {
+            > form {
+                max-width: 600px;
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .fieldset {
+        .legend {
+            &:extend(.abs-margin-for-forms-desktop all);
+        }
+        > .field {
+            .lib-form-field-type-revert();
+            margin: 0 0 @form-field__vertical-indent__desktop;
+        }
+    }
+    form {
+        .field-tooltip {
+            .field-tooltip-content {
+                &:after {
+                    border-bottom-color: transparent;
+                    border-right-color: @global-secondary-color;
+                }
+            }
+        }
+    }
+}

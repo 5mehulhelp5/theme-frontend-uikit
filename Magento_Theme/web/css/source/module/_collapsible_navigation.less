@@ -1,0 +1,144 @@
+//
+//  Variables
+//  _____________________________________________
+
+@collapsible-nav-background: @sidebar__background-color;
+@collapsible-nav-color: @color-gray34;
+@collapsible-nav-current-border: 3px solid transparent;
+@collapsible-nav-current-border-color: @active__color;
+@collapsible-nav-current-color: @color-black;
+@collapsible-nav-current-font-weight: @font-weight__semibold;
+@collapsible-nav-delimiter__border-color: @color-gray82;
+@collapsible-nav-item-hover: @color-gray91;
+
+& when (@media-common = true) {
+    .privacy-policy {
+        .block-collapsible-nav {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            display: block;
+            &:extend(.uk-margin-remove-bottom);
+            &:extend(.uk-section);
+            &:extend(.uk-section-muted);
+
+            .item {
+                &:first-child {
+                    &:extend(.uk-margin-remove);
+                }
+
+                a,
+                > strong {
+                    &:extend(.uk-padding-small);
+                    .lib-css(color, @collapsible-nav-color);
+                    display: block;
+                }
+
+                a {
+                    text-decoration: none;
+
+                    &:hover {
+                        .lib-css(color, @collapsible-nav-current-color);
+                    }
+                }
+
+                .delimiter {
+                    border-top: 1px solid @collapsible-nav-delimiter__border-color;
+                    display: block;
+                    &:extend(.uk-margin-small);
+                }
+            }
+
+            .block-collapsible-nav-title {
+                border: 0;
+
+                > strong {
+                    font-size: @global-large-font-size;
+                }
+            }
+
+            .block-collapsible-nav-content {
+                border-bottom: 0px;
+            }
+        }
+    }
+    .sidebar-main {
+        .block-collapsible-nav {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            display: block;
+            &:extend(.uk-padding-remove);
+            &:extend(.uk-margin-remove-bottom);
+            .item {
+                &:first-child {
+                    &:extend(.uk-margin-remove);
+                }
+
+                a,
+                > strong {
+                    &:extend(.uk-padding-small);
+                    .lib-css(color, @collapsible-nav-color);
+                    display: block;
+                }
+
+                a {
+                    text-decoration: none;
+
+                    &:hover {
+                        .lib-css(color, @collapsible-nav-current-color);
+                    }
+                }
+
+                .delimiter {
+                    border-top: 1px solid @collapsible-nav-delimiter__border-color;
+                    display: block;
+                    &:extend(.uk-margin-small);
+                }
+            }
+            .block-collapsible-nav-title {
+                border: 0;
+                > strong {
+                    font-size: @global-large-font-size;
+                }
+            }
+            .block-collapsible-nav-content {
+                border-bottom: 0px;
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .block-collapsible-nav {
+        .title {
+            &:extend(.abs-visually-hidden-desktop all);
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .block-collapsible-nav {
+        left: 0;
+        position: absolute;
+        top: -21px;
+        width: 100%;
+        z-index: 5;
+        .title {
+            &:extend(.abs-toggling-title-mobile all);
+        }
+        .content {
+            border-bottom: @border-width__base solid @border-color__base;
+            display: none;
+            &.active {
+                display: block;
+            }
+        }
+    }
+}

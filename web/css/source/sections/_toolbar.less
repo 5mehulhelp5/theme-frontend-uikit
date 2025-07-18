@@ -1,0 +1,144 @@
+& when (@media-common = true) {
+    .toolbar {
+        .modes {
+            display: none;
+            &:extend(.uk-section);
+            &:extend(.uk-section-muted);
+            &:extend(.uk-padding-remove);
+            overflow: hidden;
+            .modes-mode {
+                .lib-css(color, @global-secondary-color);
+                border: 0px;
+                padding: 14px 20px;
+                span, &:before {
+                    .lib-css(color, @global-secondary-color);
+                }
+                &:not(.active) {
+                    &:hover {
+                        .lib-css(color, @toolbar-element__color);
+                        background: @global-secondary-color;
+                        span, &:before {
+                            .lib-css(color, @toolbar-element__color);
+                        }
+                    }
+                }
+
+                &.mode-grid {
+                    &:before {
+                        content: "";
+                        width: 20px;
+                        height: 20px;
+                        .svg-fill(@grid-svg-icon, "#000", @global-secondary-color);
+                    }
+
+                    &:hover {
+                        &:not(.active) {
+                            &:before {
+                                .svg-fill(@grid-svg-icon, "#000", @global-inverse-color);
+                            }
+                        }
+                    }
+                }
+
+                &.mode-list {
+                    &:before {
+                        content: "";
+                        width: 20px;
+                        height: 20px;
+                        .svg-fill(@list-svg-icon, "#000", @global-secondary-color);
+                    }
+
+                    &:hover {
+                        &:not(.active) {
+                            &:before {
+                                .svg-fill(@list-svg-icon, "#000", @global-inverse-color);
+                            }
+                        }
+                    }
+                }
+
+                .active {
+                    &:hover {
+                        .lib-css(color, @global-secondary-color);
+
+                        span, &:before {
+                            .lib-css(color, @global-secondary-color);
+                        }
+                    }
+
+                    &.mode-grid {
+                        &:before {
+                            .svg-fill(@grid-svg-icon, "#000", @global-inverse-color);
+                        }
+                    }
+
+                    &.mode-list {
+                        &:before {
+                            .svg-fill(@list-svg-icon, "#000", @global-inverse-color);
+                        }
+                    }
+                }
+            }
+        }
+        .toolbar-sorter {
+            &:extend(.uk-width-100);
+            &:extend(.uk-text-right);
+            &:extend(.uk-section);
+            &:extend(.uk-section-muted);
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            padding: 8px 5px;
+            select {
+                background: @global-inverse-color;
+            }
+        }
+        .pages {
+            &:extend(.uk-section);
+            &:extend(.uk-section-muted);
+            padding: 8px 20px;
+            .pages-items {
+                .item {
+                    line-height: 30px;
+                    > strong {
+                        line-height: 30px;
+                    }
+                    .action {
+                        border: 0;
+                        border-radius: 6px;
+                        background: @global-inverse-color;
+                        width: 30px;
+                        height: 30px;
+                        span {
+                            display: none;
+                        }
+                        &:before {
+                            font-size: 30px;
+                            .lib-css(color, @global-secondary-color);
+                        }
+                    }
+                }
+            }
+        }
+        .limiter {
+            &:extend(.uk-section);
+            &:extend(.uk-section-muted);
+            padding: 8px 20px;
+            select {
+                background: @global-inverse-color;
+            }
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .toolbar {
+        .modes {
+            display: block;
+        }
+        .toolbar-sorter {
+            padding: 8px 20px;
+            position: relative;
+            width: auto;
+        }
+    }
+}

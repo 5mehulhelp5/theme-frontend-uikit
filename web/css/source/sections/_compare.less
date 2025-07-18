@@ -1,0 +1,14 @@
+& when (@media-common = true) {
+    .products.list.items,
+    .product-items,
+    .table-comparison {
+        .action {
+            &.tocompare {
+                color: @global-secondary-color;
+                &:before {
+                    color: @global-secondary-color;
+                }
+            }
+        }
+    }
+}

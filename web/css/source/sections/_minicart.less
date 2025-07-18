@@ -1,0 +1,30 @@
+& when (@media-common = true) {
+    .block-minicart {
+        &:extend(.uk-section);
+        .block-content {
+            .product-item-details {
+                &:extend(.uk-text-small);
+                .price-container {
+                    .price {
+                        &:extend(.uk-text-small);
+                    }
+                }
+            }
+            > .actions {
+                > .primary {
+                    .action {
+                        &.primary {
+                            &:extend(.uk-button-primary);
+                            &:hover {
+                                &:extend(.uk-button-primary:hover);
+                            }
+                            &:active {
+                                &:extend(.uk-button-primary:active);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

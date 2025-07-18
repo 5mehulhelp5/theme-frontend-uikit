@@ -1,0 +1,47 @@
+& when (@media-common = true) {
+  .form.search.advanced {
+    &:extend(.uk-padding-remove);
+    &:extend(.uk-margin);
+    fieldset {
+      border: 0;
+      .legend {
+        &:extend(.uk-margin-remove-left);
+      }
+      .field {
+        &:not(.choice) {
+          input,
+          select,
+          textarea {
+            &:extend(.uk-margin-small-top);
+          }
+          .label {
+            &:extend(.uk-text-left);
+            &:extend(.uk-width-100);
+          }
+          .control {
+            &:extend(.uk-padding-remove-left);
+            &:extend(.uk-width-100);
+          }
+        }
+        &.price {
+          .field {
+            &.no-label {
+              .addafter, .control:after {
+                top: 50%;
+                transform: translateY(-50%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: @screen__m) {
+  .form.search.advanced {
+    &:extend(.uk-padding-remove);
+    > fieldset {
+        &:extend(.uk-padding-remove);
+    }
+  }
+}

@@ -1,0 +1,50 @@
+& when (@media-common = true) {
+  .account {
+    &.page-layout-2columns-left {
+      .main-container {
+        .columns {
+          .column.main {
+            &:extend(.uk-width-3-4);
+          }
+        }
+      }
+    }
+  }
+  .table-comparison {
+    &:not(.cart) {
+      &:not(.totals) {
+        > thead {
+          > tr {
+            > th, td {
+              border-bottom: 0;
+              &.remove {
+                &:extend(.uk-text-left);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .action{
+    &.print{
+      &:extend(.uk-button-primary);
+      &:extend(.uk-padding-small);
+      &:extend(.uk-padding-medium-left);
+      &:extend(.uk-padding-medium-right);
+    }
+  }
+}
+@media only screen and (min-width: @screen__m) {
+    .account {
+        &.page-layout-2columns-left {
+            .main-container {
+                .columns {
+                    .column.main {
+                        &:extend(.uk-width-3-4);
+                    }
+                }
+            }
+        }
+    }
+}

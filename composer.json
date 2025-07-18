@@ -1,0 +1,31 @@
+{
+    "name": "mage-os/theme-frontend-uikit",
+    "description": "UIkit3-based theme for Mage-OS and Magento",
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "mage-os/framework": "*",
+        "mage-os/theme-frontend-blank": "*",
+        "mage-os/mage-os-theme": "^1.0.0"
+    },
+    "type": "magento2-theme",
+    "license": [
+        "MIT"
+    ],
+    "authors": [
+        {
+            "name": "Davide Lunardon",
+            "email": "dadolun@gmail.com"
+        },
+        {
+            "name": "Davide Modenato",
+            "email": "Dmodenato.dev@gmail.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ]
+    }
+}

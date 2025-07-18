@@ -1,0 +1,51 @@
+& when (@media-common = true) {
+    .products.product-items {
+        .product-item {
+            &:extend(.uk-margin-small-bottom);
+            &:extend(.uk-padding-remove-horizontal);
+            .product-item-info {
+                position: relative;
+                &:extend(.uk-padding-small);
+                &:extend(.uk-width-auto);
+                .product-item-details {
+                    .product-reviews-summary {
+                        .reviews-actions {
+                            display: none;
+                        }
+                    }
+                }
+                .product-item-inner {
+                    .product-item-actions {
+                        &:extend(.uk-flex);
+                        &:extend(.uk-flex-wrap);
+                        &:extend(.uk-flex-middle);
+                        .actions-secondary {
+                            position: absolute;
+                            z-index: 1;
+                            &:extend(.uk-position-top-right);
+                            &:extend(.uk-flex);
+                            &:extend(.uk-flex-column);
+                            &:extend(.uk-padding-small);
+                        }
+                        .action {
+                            &.tocompare,
+                            &.towishlist {
+                                span {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+                .product-image-container {
+                    width: 100%;
+                    aspect-ratio: 1 / 1;
+                    .product-image-photo {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}

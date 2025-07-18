@@ -1,0 +1,19 @@
+& when (@media-common = true) {
+  .message {
+    &:extend(.uk-padding-small);
+    &.success,
+    &.alert,
+    &.warning,
+    &.info,
+    &.notice,
+    &.error {
+      &:extend(.uk-text-default);
+      > *:first-child {
+        &:before {
+          top: 15px;
+          &:extend(.uk-position-relative);
+        }
+      }
+    }
+  }
+}

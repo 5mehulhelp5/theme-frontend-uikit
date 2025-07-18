@@ -1,0 +1,49 @@
+& when (@media-common = true) {
+  .product-items .action,
+  .products.list.items .action,
+  .table-comparison .action {
+    &.tocompare {
+      &:before {
+        content: @icon-compare-empty;
+        font-size: 29px;
+        line-height: 24px;
+        color: #b0b0b0;
+        font-family: 'icons-blank-theme';
+        vertical-align: middle;
+        display: inline-block;
+        font-weight: normal;
+        overflow: hidden;
+        speak: none;
+        text-align: center;
+      }
+      &.active {
+        &:before {
+          content: @icon-compare-full;
+        }
+      }
+    }
+  }
+  .product-item-actions {
+    .actions-secondary {
+      .action {
+        &.delete {
+          &:before {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 26px;
+            line-height: 15px;
+            color: #303030;
+            content: @icon-remove;
+            font-family: 'icons-blank-theme';
+            vertical-align: middle;
+            display: inline-block;
+            font-weight: normal;
+            overflow: hidden;
+            speak: none;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

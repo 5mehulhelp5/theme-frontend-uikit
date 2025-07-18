@@ -1,0 +1,18 @@
+& when (@media-common = true) {
+    .message.global {
+        &.cookie {
+            &:extend(.uk-section-muted);
+            .content {
+                .actions {
+                    #btn-cookie-allow {
+                        &:extend(.uk-button);
+                        &:extend(.uk-button-secondary);
+                        &:hover {
+                            &:extend(.uk-button-secondary:hover);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
