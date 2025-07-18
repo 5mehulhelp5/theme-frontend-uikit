@@ -194,6 +194,11 @@
             height: auto;
         }
         .filter {
+            &:extend(.uk-section);
+            &:extend(.uk-section-muted);
+            position: absolute;
+            z-index: 2;
+            width: 100%;
             .block-content.filter-content {
                 display: block;
                 padding-top: 50px;
