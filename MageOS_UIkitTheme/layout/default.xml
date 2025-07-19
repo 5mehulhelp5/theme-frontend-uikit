@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_width" xsi:type="number">170</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="head.asset.preload">
+            <arguments>
+                <argument name="assets" xsi:type="array">
+                    <item name="montserrat-light" xsi:type="array">
+                        <item name="path" xsi:type="string">fonts/Montserrat/Montserrat-Light.woff2</item>
+                        <item name="type" xsi:type="array">
+                            <item name="name" xsi:type="string">type</item>
+                            <item name="value" xsi:type="string">font/woff2</item>
+                        </item>
+                        <item name="as" xsi:type="array">
+                            <item name="name" xsi:type="string">as</item>
+                            <item name="value" xsi:type="string">font</item>
+                        </item>
+                        <item name="crossorigin" xsi:type="array">
+                            <item name="name" xsi:type="string">crossorigin</item>
+                            <item name="value" xsi:type="string">false</item>
+                        </item>
+                    </item>
+                    <item name="montserrat-regular" xsi:type="array">
+                        <item name="path" xsi:type="string">fonts/Montserrat/Montserrat-Regular.woff2</item>
+                        <item name="type" xsi:type="array">
+                            <item name="name" xsi:type="string">type</item>
+                            <item name="value" xsi:type="string">font/woff2</item>
+                        </item>
+                        <item name="as" xsi:type="array">
+                            <item name="name" xsi:type="string">as</item>
+                            <item name="value" xsi:type="string">font</item>
+                        </item>
+                        <item name="crossorigin" xsi:type="array">
+                            <item name="name" xsi:type="string">crossorigin</item>
+                            <item name="value" xsi:type="string">false</item>
+                        </item>
+                    </item>
+                    <item name="montserrat-bold" xsi:type="array">
+                        <item name="path" xsi:type="string">fonts/Montserrat/Montserrat-Bold.woff2</item>
+                        <item name="type" xsi:type="array">
+                            <item name="name" xsi:type="string">type</item>
+                            <item name="value" xsi:type="string">font/woff2</item>
+                        </item>
+                        <item name="as" xsi:type="array">
+                            <item name="name" xsi:type="string">as</item>
+                            <item name="value" xsi:type="string">font</item>
+                        </item>
+                        <item name="crossorigin" xsi:type="array">
+                            <item name="name" xsi:type="string">crossorigin</item>
+                            <item name="value" xsi:type="string">false</item>
+                        </item>
+                    </item>
+                    <item name="blank_icons" xsi:type="array">
+                        <item name="path" xsi:type="string">fonts/Blank-Theme-Icons/Blank-Theme-Icons.woff2</item>
+                        <item name="type" xsi:type="array">
+                            <item name="name" xsi:type="string">type</item>
+                            <item name="value" xsi:type="string">font/woff2</item>
+                        </item>
+                        <item name="as" xsi:type="array">
+                            <item name="name" xsi:type="string">as</item>
+                            <item name="value" xsi:type="string">font</item>
+                        </item>
+                        <item name="crossorigin" xsi:type="array">
+                            <item name="name" xsi:type="string">crossorigin</item>
+                            <item name="value" xsi:type="string">false</item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="head.additional">
+            <block name="head.uikit.init" template="MageOS_UIkitTheme::uikit-init.phtml"/>
+        </referenceBlock>
+    </body>
+</page>

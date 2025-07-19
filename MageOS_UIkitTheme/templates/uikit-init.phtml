@@ -2,7 +2,10 @@
 /** @var \Magento\Framework\View\Helper\SecureHtmlRenderer $secureRenderer */
 ?>
 <?php $scriptString = <<<script
-        require(['uikit', 'uikiticons'], function (UIkit) {});
+        require(['uikit', 'uikiticons'], function (UIkit, UIkitIcons) {
+            window.UIkit = UIkit;
+            window.UIkit.use(UIkitIcons);
+        });
 script;
 ?>
 <?= /* @noEscape */ $secureRenderer->renderTag('script', [], $scriptString, false) ?>

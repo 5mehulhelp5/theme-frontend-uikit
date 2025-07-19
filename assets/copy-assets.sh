@@ -1,6 +1,7 @@
 cp node_modules/uikit/dist/js/uikit.min.js ../web/js/uikit/uikit.min.js
 cp node_modules/uikit/dist/js/uikit-icons.min.js ../web/js/uikit/uikit-icons.min.js
 
+cp -R node_modules/uikit/src/js/components/ ../web/js/uikit/components/
 cp -R node_modules/uikit/src/less/* ../web/css/uikit/
 cd ../web/css/uikit/ && for f in *.less; do if [[ "$f" != *"_"* ]]; then mv -- "$f" "_$f"; fi done
 rm _uikit.theme.less
