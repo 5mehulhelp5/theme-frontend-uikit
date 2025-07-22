@@ -7,7 +7,7 @@
     "require": {
         "mage-os/framework": "*",
         "mage-os/theme-frontend-blank": "*",
-        "mage-os/mage-os-theme": "^1.2.0"
+        "mage-os/module-theme-uikit": "^1.2.0"
     },
     "type": "magento2-theme",
     "license": [
