@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 1.0.4
+### Updated
+- Fix uikit_whitelist.xml compilation on base module
+
 ## 1.0.3
 ### Updated
 - Avoid usage of uikit_whitelist.xml for themes using UIkit
