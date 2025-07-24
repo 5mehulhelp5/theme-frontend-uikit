@@ -1,6 +1,8 @@
 # MageOS UIkit3 Theme
 
-UIkit3-based theme for Mage-OS and Magento
+**UIkit3-based theme for Mage-OS and Magento**
+
+See also [mage-os-lab/module-theme-uikit](https://github.com/mage-os-lab/module-theme-uikit)
 
 ---
 
@@ -37,6 +39,8 @@ composer require mage-os/theme-frontend-uikit
 ```
 bin/magento setup:upgrade
 ```
+
+Make sure to also install [mage-os-lab/module-theme-uikit](https://github.com/mage-os-lab/module-theme-uikit)
 
 ## Changelog
 
